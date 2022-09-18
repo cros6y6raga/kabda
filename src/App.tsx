@@ -4,7 +4,7 @@ import {Accordion} from './components/Accordion/Accordion';
 import {Rating} from './components/Rating/Rating';
 
 // function declaration
-function App() {
+function App(props:any) {
     console.log('App rendering')
     //полезное что-то
     //обязана вернуть JSX
@@ -14,9 +14,8 @@ function App() {
             <PageTitle title={'My friends'}/>
             Article 1
             <Rating value={3}/>
-            <Accordion/>
-            <Accordion/>
-            Article 2
+            <Accordion titleValue={'Menu'}/>
+            <Accordion titleValue={'Users'}/>
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
@@ -26,8 +25,10 @@ function App() {
         </div>
     );
 }
-
-function PageTitle(props:any) {
+type PageTitlePropsType = {
+    title:string
+}
+function PageTitle(props: PageTitlePropsType) {
     console.log('PageTitle rendering')
     return (
         <h1>
@@ -35,7 +36,5 @@ function PageTitle(props:any) {
         </h1>
     )
 }
-
-
 
 export default App;
