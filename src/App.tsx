@@ -3,44 +3,70 @@ import './App.css';
 
 // function declaration
 function App() {
+    console.log('App rendering')
     //полезное что-то
     //обязана вернуть JSX
     return (
         <div>
-            This is APP component
+            <AppTitle/>
             <Rating/>
             <Accordion/>
+            <Rating/>
         </div>
     );
 }
 
-function Rating() {
+function AppTitle() {
+    console.log('AppTitle rendering')
     return (
-        <div>
+        <>
+            This is APP component
+        </>
+    )
+}
+
+function Rating() {
+    console.log('Rating rendering')
+    return (
+        <>
             <Star/>
             <Star/>
             <Star/>
             <Star/>
             <Star/>
-        </div>
+        </>
     )
 }
 
 function Star() {
+    console.log('Star rendering')
     return (
         <div>star</div>
     )
 }
 
 function Accordion() {
+    console.log('Accordion rendering')
     return <div>
+        <AccordionTitle/>
+        <AccordionBody/>
+    </div>
+}
+function AccordionTitle() {
+    console.log('AccordionTitle rendering')
+    return (
         <h3>Меню</h3>
+    )
+}
+function AccordionBody() {
+    console.log('AccordionBody rendering')
+    return (
         <ul>
             <li>1</li>
             <li>2</li>
             <li>3</li>
         </ul>
-    </div>
+    )
 }
 
 export default App;
